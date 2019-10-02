@@ -1,6 +1,8 @@
 Thor::Base.shell = Thor::Shell::Color
 require 'yaml'
 
+ENV["RAILS_VERSION"] ||= 6
+
 def truthy?(statement)
   val = ask(statement)
   ['y', 'yes', ''].include?(val)
