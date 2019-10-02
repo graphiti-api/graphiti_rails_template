@@ -52,18 +52,28 @@ api_namespace
 gem 'graphiti'
 gem 'graphiti-rails'
 gem 'vandal_ui'
-gem 'kaminari', '~> 1.0'
-gem 'responders', '~> 2.4'
+gem 'kaminari', '~> 1.1'
+
+if ENV["RAILS_VERSION"].to_i == 6
+  gem 'responders', '~> 3.0'
+else
+  gem 'responders', '~> 2.4'
+end
 
 gem_group :development, :test do
-  gem 'rspec-rails', '~> 3.5.2'
-  gem 'factory_bot_rails', '~> 4.0'
-  gem 'faker', '~> 1.7' # keep here for seeds.rb
+  if ENV["RAILS_VERSION"].to_i == 6
+    gem 'rspec-rails', '~> 4.0.0beta2'
+  else
+    gem 'rspec-rails', '~> 3.5.2'
+  end
+    
+  gem 'factory_bot_rails', '~> 5.0'
+  gem 'faker', '~> 2.5' # keep here for seeds.rb
   gem 'graphiti_spec_helpers'
 end
 
 gem_group :test do
-  gem 'database_cleaner', '~> 1.6'
+  gem 'database_cleaner', '~> 1.7'
 end
 
 after_bundle do
