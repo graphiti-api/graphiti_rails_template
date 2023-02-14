@@ -11,7 +11,7 @@ def eval_template(name)
 end
 
 def update_config!(attrs)
-  config = File.exists?('.graphiticfg.yml') ? YAML.load_file('.graphiticfg.yml') : {}
+  config = File.exist?('.graphiticfg.yml') ? YAML.load_file('.graphiticfg.yml') : {}
   config.merge!(attrs)
   File.open('.graphiticfg.yml', 'w') { |f| f.write(config.to_yaml) }
 end
