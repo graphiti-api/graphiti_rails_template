@@ -1,6 +1,9 @@
-This is a [Rails Application Template](http://guides.rubyonrails.org/rails_application_templates.html).
+# Moved
 
-Its intent is to have independent steps that can be upgraded over time.
+This template now lives in the main graphiti repo, at [`templates/rails/all.rb`](https://github.com/graphiti-api/graphiti/blob/main/templates/rails/all.rb), so it ships and evolves alongside the gem.
 
-run `ruby _build.rb` to generate `all.rb`, which can be used as "one
-template to rule them all"
+```bash
+rails new blog --api -m https://raw.githubusercontent.com/graphiti-api/graphiti/main/templates/rails/all.rb
+```
+
+The `all.rb` here is a shim that applies the current template, so existing links to this repo keep working.
